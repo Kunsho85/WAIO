@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAIO Framework - Style Guide</title>
+    <meta name="description" content="Comprehensive style guide for WAIO Framework - AI-Optimized Webflow Framework combining Client First, Lumos, and cutting-edge AI optimization.">
+    
+    <!-- WAIO Framework CSS -->
+    <link rel="stylesheet" href="waio-framework.css">
+    
+    <!-- Additional styles for style guide -->
+    <style>
+        /* Style Guide Specific Styles */
+        .sg-header {
+            background: linear-gradient(135deg, var(--waio-color-primary) 0%, var(--waio-color-primary-dark) 100%);
+            color: white;
+            padding: var(--waio-space-3xl) 0;
+            text-align: center;
+        }
+        
+        .sg-section {
+            padding: var(--waio-space-2xl) 0;
+            border-bottom: 1px solid var(--waio-color-neutral-200);
+        }
+        
+        .sg-section:last-child {
+            border-bottom: none;
+        }
+        
+        .sg-example {
+            background: var(--waio-color-neutral-50);
+            border: 1px solid var(--waio-color-neutral-200);
+            border-radius: var(--waio-radius-lg);
+            padding: var(--waio-space-lg);
+            margin: var(--waio-space-md) 0;
+        }
+        
+        .sg-code {
+            background: var(--waio-color-neutral-900);
+            color: var(--waio-color-neutral-100);
+            padding: var(--waio-space-md);
+            border-radius: var(--waio-radius-md);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: var(--waio-text-sm);
+            overflow-x: auto;
+            margin: var(--waio-space-sm) 0;
+        }
+        
+        .sg-color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--waio-space-md);
+            margin: var(--waio-space-md) 0;
+        }
+        
+        .sg-color-item {
+            text-align: center;
+            border-radius: var(--waio-radius-md);
+            overflow: hidden;
+            box-shadow: var(--waio-shadow-sm);
+        }
+        
+        .sg-color-swatch {
+            height: 80px;
+            width: 100%;
+        }
+        
+        .sg-color-info {
+            padding: var(--waio-space-sm);
+            background: white;
+        }
+        
+        .sg-typography-example {
+            margin: var(--waio-space-md) 0;
+            padding: var(--waio-space-md);
+            border-left: 4px solid var(--waio-color-primary);
+            background: var(--waio-color-neutral-50);
+        }
+        
+        .sg-component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--waio-space-lg);
+            margin: var(--waio-space-lg) 0;
+        }
+        
+        .sg-nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid var(--waio-color-neutral-200);
+            z-index: 100;
+        }
+        
+        .sg-nav-links {
+            display: flex;
+            gap: var(--waio-space-lg);
+            padding: var(--waio-space-md) 0;
+            overflow-x: auto;
+        }
+        
+        .sg-nav-link {
+            white-space: nowrap;
+            color: var(--waio-color-neutral-600);
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--waio-space-xs) var(--waio-space-sm);
+            border-radius: var(--waio-radius-md);
+            transition: all var(--waio-transition-base);
+        }
+        
+        .sg-nav-link:hover,
+        .sg-nav-link.active {
+            background: var(--waio-color-primary);
+            color: white;
+        }
+        
+        .sg-ai-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--waio-space-xs);
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: var(--waio-space-xs) var(--waio-space-sm);
+            border-radius: var(--waio-radius-md);
+            font-size: var(--waio-text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .sg-feature-badge {
+            display: inline-block;
+            background: var(--waio-color-success);
+            color: white;
+            padding: var(--waio-space-xs) var(--waio-space-sm);
+            border-radius: var(--waio-radius-md);
+            font-size: var(--waio-text-xs);
+            font-weight: 600;
+            margin-left: var(--waio-space-xs);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sg-nav-links {
+                flex-direction: column;
+                gap: var(--waio-space-sm);
+            }
+            
+            .sg-component-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body data-ai-content="documentation" data-ai-priority="high">
+    
+    <!-- Header -->
+    <header class="sg-header" data-ai-content="navigation" data-ai-priority="critical">
+        <div class="waio-container w-container-xl">
+            <h1 class="waio-heading-1" style="margin-bottom: var(--waio-space-sm);">
+                WAIO Framework
+                <span class="sg-ai-indicator">
+                    🤖 AI-Optimized
+                </span>
+            </h1>
+            <p class="waio-text-xl" style="opacity: 0.9; margin-bottom: var(--waio-space-md);">
+                The next-generation Webflow framework combining Client First + Lumos + AI Optimization
+            </p>
+            <div class="waio-flex w-justify-center w-items-center" style="gap: var(--waio-space-md);">
+                <span class="sg-feature-badge">Fluid Responsive</span>
+                <span class="sg-feature-badge">AI-First</span>
+                <span class="sg-feature-badge">Accessibility Ready</span>
+                <span class="sg-feature-badge">Performance Optimized</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sg-nav" data-ai-content="navigation" data-ai-priority="high">
+        <div class="waio-container w-container-xl">
+            <div class="sg-nav-links">
+                <a href="#overview" class="sg-nav-link">Overview</a>
+                <a href="#colors" class="sg-nav-link">Colors</a>
+                <a href="#typography" class="sg-nav-link">Typography</a>
+                <a href="#spacing" class="sg-nav-link">Spacing</a>
+                <a href="#layout" class="sg-nav-link">Layout</a>
+                <a href="#components" class="sg-nav-link">Components</a>
+                <a href="#ai-features" class="sg-nav-link">AI Features</a>
+                <a href="#implementation" class="sg-nav-link">Implementation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main" data-ai-content="article" data-ai-priority="critical">
+        
+        <!-- Overview Section -->
+        <section id="overview" class="sg-section" data-ai-content="article" data-ai-priority="high">
+            <div class="waio-container w-container-xl">
+                <h2 class="waio-heading-2">Framework Overview</h2>
+                <p class="waio-text-lg w-text-neutral-700 w-mb-lg">
+                    WAIO Framework represents the evolution of Webflow development, combining proven methodologies 
+                    with cutting-edge AI optimization for superior performance and future readiness.
+                </p>
+                
+                <div class="waio-grid w-grid-cols-3 w-mb-xl">
+                    <div class="waio-card">
+                        <h3 class="waio-card-title">🎯 Performance First</h3>
+                        <p class="waio-card-description">
+                            Fluid responsive design with breakpointless scaling and optimized Core Web Vitals.
+                        </p>
+                    </div>
+                    <div class="waio-card">
+                        <h3 class="waio-card-title">🤖 AI Optimized</h3>
+                        <p class="waio-card-description">
+                            Semantic markup, structured data, and LLM optimization for superior AI understanding.
+                        </p>
+                    </div>
+                    <div class="waio-card">
+                        <h3 class="waio-card-title">♿ Accessibility Ready</h3>
+                        <p class="waio-card-description">
+                            WCAG 2.1 AA compliance with enhanced keyboard navigation and screen reader support.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="sg-example">
+                    <h4 class="waio-heading-4 w-mb-sm">Key Features</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: var(--waio-space-xs);">✅ Fluid responsive design system</li>
+                        <li style="margin-bottom: var(--waio-space-xs);">✅ AI-first semantic structure</li>
+                        <li style="margin-bottom: var(--waio-space-xs);">✅ Comprehensive component library</li>
+                        <li style="margin-bottom: var(--waio-space-xs);">✅ Performance monitoring built-in</li>
+                        <li style="margin-bottom: var(--waio-space-xs);">✅ Accessibility enhancements</li>
+                        <li style="margin-bottom: var(--waio-space-xs);">✅ Webflow ecosystem compatibility</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colors Section -->
+        <section id="colors" class="sg-section" data-ai-content="article" data-ai-priority="medium">
+            <div class="waio-container w-container-xl">
+                <h2 class="waio-heading-2">Color System</h2>
+                <p class="waio-text-lg w-text-neutral-700 w-mb-lg">
+                    Semantic color palette designed for accessibility and AI understanding.
+                </p>
+
+                <h3 class="waio-heading-3">Primary Colors</h3>
+                <div class="sg-color-grid">
+                    <div class="sg-color-item">
+                        <div class="sg-color-swatch" style="background-color: var(--waio-color-primary);"></div>
+                        <div class="sg-color-info">
+                            <strong>Primary</strong><br>
+                            <code>--waio-color-primary</code><br>
+                            <small>#2563eb</small>
+                        </div>
+                    </div>
+                    <div class="sg-color-item">
+                        <div class="sg-color-swatch" style="background-color: var(--waio-color-primary-light);"></div>
+                        <div class="sg-color-info">
+                            <strong>Primary Light</strong><br>
+                            <code>--waio-color-primary-light</code><br>
+                            <small>#3b82f6</small>
+                        </div>
+                    </div>
+                    <div class="sg-color-item">
+                        <div class="sg-color-swatch" style="background-color: var(--waio-color-primary-dark);"></div>
+                        <div class="sg-color-info">
+                            <strong>Primary Dark</strong><br>
+                            <code>--waio-color-primary-dark</code><br>
+                            <small>#1d4ed8</small>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="waio-heading-3">Semantic Colors</h3>
+                <div class="sg-color-grid">
+                    <div class="sg-color-item">
+                        <div class="sg-color-swatch" style="background-color: var(--waio-color-success);"></div>
+                        <div class="sg-color-info">
+                            <strong>Success</strong><br>
+                            <code>--waio-color-success</code><br>
+                            <small>#10b981</small>
+                        </div>
+                    </div>
+                    <div class="sg-color-item">
+                        <div class="sg-color-swatch" style="background-color: var(--waio-color-warning);"></div>
+                        <div class="sg-color-info">
+                            <strong>Warning</strong><br>
+                            <code>--waio-color-warning</code><br>
+                            <small>#f59e0b</small>
+                        </div>
+                    </div>
+                    <div class="sg-color-item">
+                        <div class="sg-color-swatch" style="background-color: var(--waio-color-error);"></div>
+                        <div class="sg-color-info">
+                            <strong>Error</strong><br>
+                            <code>--waio-color-error</code><br>
+                            <small>#ef4444</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sg-code">
+/* Using WAIO Colors */
+.my-element {
+  background-color: var(--waio-color-primary);
+  color: white;
+}
+
+.success-message {
+  color: var(--waio-color-success);
+}</div>
+            </div>
+        </section>
+
+        <!-- Typography Section -->
+        <section id="typography" class="sg-section" data-ai-content="article" data-ai-priority="medium">
+            <div class="waio-container w-container-xl">
+                <h2 class="waio-heading-2">Typography System</h2>
+                <p class="waio-text-lg w-text-neutral-700 w-mb-lg">
+                    Fluid typography that scales seamlessly across all devices using CSS clamp() functions.
+                </p>
+
+                <h3 class="waio-heading-3">Heading Scale</h3>
+                <div class="sg-typography-example">
+                    <h1 class="waio-heading-1">Heading 1 - Main Page Title</h1>
+                    <h2 class="waio-heading-2">Heading 2 - Section Title</h2>
+                    <h3 class="waio-heading-3">Heading 3 - Subsection Title</h3>
+                    <h4 class="waio-heading-4">Heading 4 - Component Title</h4>
+                    <h5 class="waio-heading-5">Heading 5 - Small Title</h5>
+                    <h6 class="waio-heading-6">Heading 6 - Micro Title</h6>
+                </div>
+
+                <h3 class="waio-heading-3">Text Sizes</h3>
+                <div class="sg-typography-example">
+                    <p class="waio-text-xs">Extra Small Text - Captions and fine print</p>
+                    <p class="waio-text-sm">Small Text - Secondary information</p>
+                    <p class="waio-text-base">Base Text - Body content and paragraphs</p>
+                    <p class="waio-text-lg">Large Text - Emphasized content</p>
+                    <p class="waio-text-xl">Extra Large Text - Standout content</p>
+                    <p class="waio-text-2xl">2XL Text - Hero descriptions</p>
+                </div>
+
+                <div class="sg-code">
+/* WAIO Typography Classes */
+.w-heading-1 { font-size: var(--waio-text-5xl); }
+.w-text-base { font-size: var(--waio-text-base); }
+.w-text-lg { font-size: var(--waio-text-lg); }
+
+/* Fluid scaling example */
+:root {
+  --waio-text-base: clamp(1rem, 1.2vw, 1.125rem);
+}</div>
+            </div>
+        </section>
+
+        <!-- Spacing Section -->
+        <section id="spacing" class="sg-section" data-ai-content="article" data-ai-priority="medium">
+            <div class="waio-container w-container-xl">
+                <h2 class="waio-heading-2">Spacing System</h2>
+                <p class="waio-text-lg w-text-neutral-700 w-mb-lg">
+                    Consistent spacing scale using fluid CSS custom properties for perfect proportions.
+                </p>
+
+                <h3 class="waio-heading-3">Spacing Scale</h3>
+                <div class="sg-example">
+                    <div style="display: flex; flex-direction: column; gap: var(--waio-space-sm);">
+                        <div style="display: flex; align-items: center; gap: var(--waio-space-md);">
+                            <div style="width: 100px; font-weight: 600;">XS</div>
+                            <div style="height: 20px; background: var(--waio-color-primary); width: var(--waio-space-xs);"></div>
+                            <code>var(--waio-space-xs)</code>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--waio-space-md);">
+                            <div style="width: 100px; font-weight: 600;">SM</div>
+                            <div style="height: 20px; background: var(--waio-color-primary); width: var(--waio-space-sm);"></div>
+                            <code>var(--waio-space-sm)</code>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--waio-space-md);">
+                            <div style="width: 100px; font-weight: 600;">MD</div>
+                            <div style="height: 20px; background: var(--waio-color-primary); width: var(--waio-space-md);"></div>
+                            <code>var(--waio-space-md)</code>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--waio-space-md);">
+                            <div style="width: 100px; font-weight: 600;">LG</div>
+                            <div style="height: 20px; background: var(--waio-color-primary); width: var(--waio-space-lg);"></div>
+                            <code>var(--waio-space-lg)</code>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--waio-space-md);">
+                            <div style="width: 100px; font-weight: 600;">XL</div>
+                            <div style="height: 20px; background: var(--waio-color-primary); width: var(--waio-space-xl);"></div>
+                            <code>var(--waio-space-xl)</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sg-code">
+/* WAIO Spacing Utilities */
+.w-p-md { padding: var(--waio-space-md); }
+.w-m-lg { margin: var(--waio-space-lg); }
+.w-px-sm { padding-left: var(--waio-space-sm); padding-right: var(--waio-space-sm); }
+.w-py-xl { padding-top: var(--waio-space-xl); padding-bottom: var(--waio-space-xl); }</div>
+            </div>
+        </section>
+
+        <!-- Layout Section -->
+        <section id="layout" class="sg-section" data-ai-content="article" data-ai-priority="medium">
+            <div class="waio-container w-container-xl">
+                <h2 class="waio-heading-2">Layout System</h2>
+                <p class="waio-text-lg w-text-neutral-700 w-mb-lg">
+                    Fluid container and grid system for responsive layouts without breakpoints.
+                </p>
+
+                <h3 class="waio-heading-3">Container System</h3>
+                <div class="sg-example">
+                    <div class="waio-container w-container-sm w-bg-neutral-100 w-p-md w-text-center w-rounded-md">
+                        <strong>Small Container</strong> - max-width: 640px
+                    </div>
+                    <br>
+                    <div class="waio-container w-container-lg w-bg-neutral-100 w-p-md w-text-center w-rounded-md">
+                        <strong>Large Container</strong> - max-width: 1024px
+                    </div>
+                </div>
+
+                <h3 class="waio-heading-3">Grid System</h3>
+                <div class="sg-example">
+                    <div class="waio-grid w-grid-cols-3 w-mb-md">
+                        <div class="waio-bg-primary w-p-md w-text-center w-rounded-md" style="color: white;">1</div>
+                        <div class="waio-bg-primary w-p-md w-text-center w-rounded-md" style="color: white;">2</div>
+                        <div class="waio-bg-primary w-p-md w-text-center w-rounded-md" style="color: white;">3</div>
+                    </div>
+                    <p><strong>3-Column Grid</strong> - <code>.w-grid .w-grid-cols-3</code></p>
+                </div>
+
+                <div class="sg-example">
+                    <div class="waio-grid w-grid-responsive">
+                        <div class="waio-bg-secondary w-p-md w-text-center w-rounded-md" style="color: white;">Auto</div>
+                        <div class="waio-bg-secondary w-p-md w-text-center w-rounded-md" style="color: white;">Responsive</div>
+                        <div class="waio-bg-secondary w-p-md w-text-center w-rounded-md" style="color: white;">Grid</div>
+                        <div class="waio-bg-secondary w-p-md w-text-center w-rounded-md" style="color: white;">Layout</div>
+                    </div>
+                    <p><strong>Responsive Grid</strong> - <code>.w-grid .w-grid-responsive</code></p>
+                </div>
+
+                <div class="sg-code">
+/* WAIO Layout Classes */
+.w-container { width: 100%; margin: 0 auto; padding: 0 var(--waio-space-md); }
+.w-grid { display: grid; gap: var(--waio-space-md); }
+.w-grid-responsive { 
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); 
+}</div>
+            </div>
+        </section>
+
+        <!-- Components Section -->
+        <section id="components" class="sg-section" data-ai-content="article" data-ai-priority="high">
+            <div class="waio-container w-container-xl">
+                <h2 class="waio-heading-2">Component Library</h2>
+                <p class="waio-text-lg w-text-neutral-700 w-mb-lg">
+                    Ready-to-use components with built-in accessibility and AI optimization.
+                </p>
+
+                <h3 class="waio-heading-3">Buttons</h3>
+                <div class="sg-example">
+                    <div class="waio-flex w-items-center" style="gap: var(--waio-space-md); flex-wrap: wrap;">
+                        <button class="waio-button w-button-primary">Primary Button</button>
+                        <button class="waio-button w-button-secondary">Secondary Button</button>
+                        <button class="waio-button w-button-outline">Outline Button</button>
+                    </div>
+                </div>
+
+                <div class="sg-code">
+&lt;button class="waio-button w-button-primary"&gt;Primary Button&lt;/button&gt;
+&lt;button class="waio-button w-button-secondary"&gt;Secondary Button&lt;/button&gt;
+&lt;button class="waio-button w-button-outline"&gt;Outline Button&lt;/button&gt;</div>
+
+                <h3 class="waio-heading-3">Cards</h3>
+                <div class="sg-component-grid">
+                    <div class="waio-card" data-ai-content="product" data-ai-priority="medium">
+                        <div class="waio-card-header">
+                            <h4 class="waio-card-title">Product Card</h4>
+                            <p class="waio-card-description">Perfect for showcasing products with AI optimization</p>
+                        </div>
+                        <div class="waio-card-content">
+                            <p>This card includes semantic markup and structured data attributes for optimal AI understanding.</p>
+                        </div>
+                        <div class="waio-card-footer">
+                            <button class="waio-button w-button-primary">Learn More</button>
+                        </div>
+                    </div>
+
+                    <div class="waio-card" data-ai-content="service" data-ai-priority="medium">
+                        <div class="waio-card-header">
+                            <h4 class="waio-card-title">Service Card</h4>
+                            <p class="waio-card-description">Ideal for service descriptions with accessibility features</p>
+                        </div>
+                        <div class="waio-card-content">
+                            <p>Enhanced with ARIA attributes and keyboard navigation support for better accessibility.</p>
+                        </div>
+                        <div class="waio-card-footer">
+                            <button class="waio-button w-button-outline">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sg-code">
+&lt;div class="waio-card" data-ai-content="product" data-ai-priority="medium"&gt;
+  &lt;div class="waio-card-header"&gt;
+    &lt;h4 class="waio-card-title"&gt;Card Title&lt;/h4&gt;
+    &lt;p class="waio-card-description"&gt;Card description&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="waio-card-content"&gt;
+    &lt;p&gt;Card content goes here&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="waio-card-footer"&gt;
+    &lt;button class="waio-button w-button-primary"&gt;Action&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+
+                <h3 class="waio-heading-3">Navigation</h3>
+                <div class="sg-example">
+                    <nav class="waio-nav" data-ai-content="navigation" data-ai-priority="critical">
+                        <a href="#" class="waio-nav-brand">Brand</a>
+                        <ul class="waio-nav-links">
+                            <li><a href="#" class="waio-nav-link w-active">Home</a></li>
+                            <li><a href="#" class="waio-nav-link">About</a></li>
+                            <li><a href="#" class="waio-nav-link">Services</a></li>
+                            <li><a href="#" class="waio-nav-link">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <h3 class="waio-heading-3">Forms</h3>
+                <div class="sg-example">
+                    <form class="waio-form" data-ai-content="form" data-ai-priority="high">
+                        <div class="waio-form-group">
+                            <label for="name" class="waio-label">Full Name</label>
+                            <input type="text" id="name" class="waio-input" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="waio-form-group">
+                            <label for="email" class="waio-label">Email Address</label>
+                            <input type="email" id="email" class="waio-input" placeholder="Enter your email" required>
+                        </div>
+                        <div class="waio-form-group">
+                            <label for="message" class="waio-label">Message</label>
+                            <textarea id="message" class="waio-textarea" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="waio-button w-button-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Features Section -->
+        <section id="ai-features" class="sg-section" data-ai-content="article" data-ai-priority="critical">
+            <div class="waio-container w-container-xl">
+                <h2 class="waio-heading-2">
+                    AI Optimization Features
+                    <span class="sg-ai-indicator">🤖 AI-First</span>
+                </h2>
+                <p class="waio-text-lg w-text-neutral-700 w-mb-lg">
+                    Built-in AI optimization features that enhance content understanding and search performance.
+                </p>
+
+                <h3 class="waio-heading-3">Content Classification</h3>
+                <div class="sg-example">
+                    <p>WAIO automatically classifies content using semantic data attributes:</p>
+                    <ul style="list-style: none; padding: 0; margin-top: var(--waio-space-md);">
+                        <li style="margin-bottom: var(--waio-space-sm);">
+                            <code>data-ai-content="article"</code> - Blog posts, news articles
+                        </li>
+                        <li style="margin-bottom: var(--waio-space-sm);">
+                            <code>data-ai-content="product"</code> - Product descriptions, e-commerce items
+                        </li>
+                        <li style="margin-bottom: var(--waio-space-sm);">
+                            <code>data-ai-content="service"</code> - Service descriptions, offerings
+                        </li>
+                        <li style="margin-bottom: var(--waio-space-sm);">
+                            <code>data-ai-content="navigation"</code> - Navigation menus, links
+                        </li>
+                        <li style="margin-bottom: var(--waio-space-sm);">
+                            <code>data-ai-content="contact"</code> - Contact information, forms
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="waio-heading-3">Priority System</h3>
+                <div class="sg-example">
+                    <p>AI priority indicators help search engines understand content importance:</p>
+                    <ul style="list-style: none; padding: 0; margin-top: var(--waio-space-md);">
+                        <li style="margin-bottom: var(--waio-space-sm);">
+                            <code>data-ai-priority="critical"</code> - Main headings, primary content
+                        </li>
+                        <li style="margin-bottom: var(--waio-space-sm);">
+                            <code>data-ai-priority="high"</code> - Important sections, key information
+                        </li>
+                        <li style="margin-bottom: var(--waio-space-sm);">
+                            <code>data-ai-priority="medium"</code> - Supporting content, details
+                        </li>
+                        <li style="margin-bottom: var(--waio-space-sm);">
+                            <code>data-ai-priority="low"</code> - Supplementary information, footnotes
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="waio-heading-3">Structured Data</h3>
+                <div class="sg-example">
+                    <p>Automatic Schema.org markup generation for enhanced search results:</p>
+                    <div class="sg-code">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Article Title",
+  "description": "Article description for AI understanding"
+}</div>
+                </div>
+
+                <h3 class="waio-heading-3">Implementation Example</h3>
+                <div class="sg-code">
+&lt;article data-ai-content="article" data-ai-priority="critical"&gt;
+  &lt;h1 data-ai-priority="critical"&gt;Main Article Title&lt;/h1&gt;
+  &lt;p data-ai-priority="high"&gt;Important introduction paragraph&lt;/p&gt;
+  &lt;section data-ai-priority="medium"&gt;
+    &lt;h2&gt;Section Heading&lt;/h2&gt;
+    &lt;p&gt;Supporting content&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/article&gt;</div>
+            </div>
+        </section>
+
+        <!-- Implementation Section -->
+        <section id="implementation" class="sg-section" data-ai-content="article" data-ai-priority="high">
+            <div class="waio-container w-container-xl">
+                <h2 class="waio-heading-2">Webflow Implementation</h2>
+                <p class="waio-text-lg w-text-neutral-700 w-mb-lg">
+                    Step-by-step guide to implementing WAIO Framework in your Webflow projects.
+                </p>
+
+                <h3 class="waio-heading-3">1. Add Framework Files</h3>
+                <div class="sg-example">
+                    <p><strong>Project Settings → Custom Code → Head Code:</strong></p>
+                    <div class="sg-code">
+&lt;link rel="stylesheet" href="https://your-domain.com/waio-framework.css"&gt;</div>
+                    
+                    <p style="margin-top: var(--waio-space-md);"><strong>Project Settings → Custom Code → Footer Code:</strong></p>
+                    <div class="sg-code">
+&lt;script src="https://your-domain.com/waio-framework.js"&gt;&lt;/script&gt;</div>
+                </div>
+
+                <h3 class="waio-heading-3">2. Apply WAIO Classes</h3>
+                <div class="sg-example">
+                    <p>In Webflow Designer, add WAIO classes to your elements:</p>
+                    <ul style="list-style: none; padding: 0; margin-top: var(--waio-space-md);">
+                        <li style="margin-bottom: var(--waio-space-sm);">• Use <code>.w-container</code> for responsive containers</li>
+                        <li style="margin-bottom: var(--waio-space-sm);">• Apply <code>.w-grid</code> classes for layout</li>
+                        <li style="margin-bottom: var(--waio-space-sm);">• Add <code>.w-button</code> variants for buttons</li>
+                        <li style="margin-bottom: var(--waio-space-sm);">• Use <code>.w-card</code> for content cards</li>
+                    </ul>
+                </div>
+
+                <h3 class="waio-heading-3">3. Add AI Attributes</h3>
+                <div class="sg-example">
+                    <p>In Element Settings → Custom Attributes, add:</p>
+                    <div class="sg-code">
+Name: data-ai-content
+Value: article (or product, service, navigation, etc.)
+
+Name: data-ai-priority  
+Value: critical (or high, medium, low)</div>
+                </div>
+
+                <h3 class="waio-heading-3">4. Test Implementation</h3>
+                <div class="sg-example">
+                    <p>After publishing, verify the framework is working:</p>
+                    <ul style="list-style: none; padding: 0; margin-top: var(--waio-space-md);">
+                        <li style="margin-bottom: var(--waio-space-sm);">• Open browser console (F12)</li>
+                        <li style="margin-bottom: var(--waio-space-sm);">• Type: <code>window.WAIO.ready</code></li>
+                        <li style="margin-bottom: var(--waio-space-sm);">• Should return: <code>true</code></li>
+                        <li style="margin-bottom: var(--waio-space-sm);">• Check for any JavaScript errors</li>
+                    </ul>
+                </div>
+
+                <div class="waio-card w-bg-neutral-50" style="margin-top: var(--waio-space-xl);">
+                    <div class="waio-card-header">
+                        <h4 class="waio-card-title">🚀 Ready to Get Started?</h4>
+                        <p class="waio-card-description">Download the complete WAIO Framework package and start building AI-optimized websites today.</p>
+                    </div>
+                    <div class="waio-card-footer">
+                        <button class="waio-button w-button-primary">Download Framework</button>
+                        <button class="waio-button w-button-outline">View Documentation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="waio-py-xl w-bg-neutral-900" style="color: white; margin-top: var(--waio-space-3xl);" data-ai-content="contact" data-ai-priority="low">
+        <div class="waio-container w-container-xl w-text-center">
+            <h3 class="waio-heading-3" style="color: white; margin-bottom: var(--waio-space-md);">WAIO Framework</h3>
+            <p class="waio-text-neutral-400 w-mb-md">
+                The next-generation Webflow framework for AI-optimized web development.
+            </p>
+            <p class="waio-text-sm w-text-neutral-500">
+                © 2024 WAIO Framework. Built for the future of web development.
+            </p>
+        </div>
+    </footer>
+
+    <!-- WAIO Framework JavaScript -->
+    <script src="waio-framework.js"></script>
+    
+    <!-- Style Guide Specific JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.sg-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                
+                if (target) {
+                    // Update active state
+                    document.querySelectorAll('.sg-nav-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Smooth scroll
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active navigation on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.sg-nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Initialize with first section active
+        document.querySelector('.sg-nav-link').classList.add('active');
+    </script>
+</body>
+</html>
+
